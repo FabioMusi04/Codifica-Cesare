@@ -77,7 +77,6 @@ This is a simple implementation of the Caesar cipher, a type of substitution cip
 [![NodeJS][Node.JS]][NodeJS-url]
 ![HTML][HTML.html]
 ![CSS][CSS.css]
-[Flowbite][Flowbite-url]
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
