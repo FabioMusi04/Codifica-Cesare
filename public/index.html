@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script>
+      // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+      if (
+        localStorage.getItem("color-theme") === "dark" ||
+        (!("color-theme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    </script>
+    <style></style>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/flowbite@1.5.4/dist/flowbite.min.css"
+    />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <div
+      class="bg-white dark:bg-gray-800 rounded-lg px-6 py-8 ring-1 ring-slate-900/5 shadow-xl"
+    >
+      <button
+        id="theme-toggle"
+        type="button"
+        class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5"
+      >
+        <svg
+          id="theme-toggle-dark-icon"
+          class="hidden w-5 h-5"
+          fill="currentColor"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"
+          ></path>
+        </svg>
+        <svg
+          id="theme-toggle-light-icon"
+          class="hidden w-5 h-5"
+          fill="currentColor"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+          ></path>
+        </svg>
+      </button>
+      <form method="post">
+        <div class="rounded-lg px-6 py-8 ring-1 ring-slate-900/5 shadow-xl">
+          <ul
+            class="items-center w-full text-sm font-medium text-gray-900 bg-white rounded-lg border border-gray-200 sm:flex dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+          >
+            <li
+              class="w-full border-b border-gray-200 sm:border-b-0 sm:border-r dark:border-gray-600"
+            >
+              <div class="flex items-center pl-3">
+                <input
+                  id="horizontal-list-radio-lettere_maiuscole"
+                  type="checkbox"
+                  value="lettere_maiuscole"
+                  name="list_radio"
+                  class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"
+                />
+                <label
+                  for="horizontal-list-radio-lettere_maiuscole"
+                  class="py-3 ml-2 w-full text-sm font-medium text-gray-900 dark:text-gray-300"
+                  >A-Z
+                </label>
+              </div>
+            </li>
+            <li
+              class="w-full border-b border-gray-200 sm:border-b-0 sm:border-r dark:border-gray-600"
+            >
+              <div class="flex items-center pl-3">
+                <input
+                  id="horizontal-list-radio-lettere_minuscole"
+                  type="checkbox"
+                  value="lettere_minuscole"
+                  name="list_radio"
+                  class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"
+                />
+                <label
+                  for="horizontal-list-radio-lettere_minuscole"
+                  class="py-3 ml-2 w-full text-sm font-medium text-gray-900 dark:text-gray-300"
+                  >a-z</label
+                >
+              </div>
+            </li>
+            <li
+              class="w-full border-b border-gray-200 sm:border-b-0 sm:border-r dark:border-gray-600"
+            >
+              <div class="flex items-center pl-3">
+                <input
+                  id="horizontal-list-radio-numeri"
+                  type="checkbox"
+                  value="numeri"
+                  name="list_radio"
+                  class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"
+                />
+                <label
+                  for="horizontal-list-radio-numeri"
+                  class="py-3 ml-2 w-full text-sm font-medium text-gray-900 dark:text-gray-300"
+                  >0-9</label
+                >
+              </div>
+            </li>
+            <li
+              class="w-full border-b border-gray-200 sm:border-b-0 sm:border-r dark:border-gray-600"
+            >
+              <div class="flex items-center pl-3">
+                <input
+                  id="horizontal-list-radio-punteggiatura"
+                  type="checkbox"
+                  value="punteggiatura"
+                  name="list_radio"
+                  class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"
+                />
+                <label
+                  for="horizontal-list-radio-punteggiatura"
+                  class="py-3 ml-2 w-full text-sm font-medium text-gray-900 dark:text-gray-300"
+                  >punteggiatura</label
+                >
+              </div>
+            </li>
+            <li class="w-full dark:border-gray-600">
+              <div class="flex items-center pl-3">
+                <input
+                  id="horizontal-list-radio-spazio"
+                  type="checkbox"
+                  value="spazio"
+                  name="list_radio"
+                  class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"
+                />
+                <label
+                  for="horizontal-list-radio-punteggiatura"
+                  class="py-3 ml-2 w-full text-sm font-medium text-gray-900 dark:text-gray-300"
+                  >spazio</label
+                >
+              </div>
+            </li>
+          </ul>
+        </div>
+        <br />
+        <label
+          for="visitors"
+          class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+          >Key</label
+        >
+        <input
+          type="number"
+          id="visitors"
+          name="key"
+          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          placeholder="1-26 = 3"
+          required
+        />
+
+        <br />
+
+        <label
+          for="message"
+          class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+          >Your message</label
+        >
+        <textarea
+          name="message"
+          id="message"
+          rows="4"
+          class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          placeholder="Messaggio in chiaro..."
+        ></textarea>
+        <br />
+        <button
+          type="submit"
+          name="submit"
+          class="py-2.5 px-5 mr-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-full border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
+        >
+          Calcola
+        </button>
+      </form>
+      <input name="value">
+      
+    </div>
+    <script src="https://unpkg.com/flowbite@1.5.4/dist/flowbite.js"></script>
+    <script>
+
+      var themeToggleDarkIcon = document.getElementById(
+        "theme-toggle-dark-icon"
+      );
+      var themeToggleLightIcon = document.getElementById(
+        "theme-toggle-light-icon"
+      );
+
+      // Change the icons inside the button based on previous settings
+      if (
+        localStorage.getItem("color-theme") === "dark" ||
+        (!("color-theme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        themeToggleLightIcon.classList.remove("hidden");
+      } else {
+        themeToggleDarkIcon.classList.remove("hidden");
+      }
+
+      var themeToggleBtn = document.getElementById("theme-toggle");
+
+      themeToggleBtn.addEventListener("click", function () {
+        // toggle icons inside button
+        themeToggleDarkIcon.classList.toggle("hidden");
+        themeToggleLightIcon.classList.toggle("hidden");
+
+        // if set via local storage previously
+        if (localStorage.getItem("color-theme")) {
+          if (localStorage.getItem("color-theme") === "light") {
+            document.documentElement.classList.add("dark");
+            localStorage.setItem("color-theme", "dark");
+          } else {
+            document.documentElement.classList.remove("dark");
+            localStorage.setItem("color-theme", "light");
+          }
+
+          // if NOT set via local storage previously
+        } else {
+          if (document.documentElement.classList.contains("dark")) {
+            document.documentElement.classList.remove("dark");
+            localStorage.setItem("color-theme", "light");
+          } else {
+            document.documentElement.classList.add("dark");
+            localStorage.setItem("color-theme", "dark");
+          }
+        }
+      });
+
+    </script>
+    <script src="./main.js"></script>
+  </body>
+</html>
